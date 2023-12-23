@@ -1,6 +1,8 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router';
+import { RouterView } from 'vue-router';
 import { provide } from 'vue';
+import NavbarItem from '@/components/UI/NavbarItem.vue';
+
 provide('consultations', {
     'Петр Сидоров': {
         '2023-11-12': [
@@ -13,15 +15,15 @@ provide('consultations', {
 
 <template>
   <nav>
-    <RouterLink to="/appoint">
-      <box-icon name='add-to-queue' size="md"></box-icon>
-    </RouterLink>
-    <RouterLink to="/">
-      <box-icon name='home-alt' size="md"></box-icon>
-    </RouterLink>
-    <RouterLink to="/profile">
-      <box-icon name='user' size="md"></box-icon>
-    </RouterLink>
+    <NavbarItem 
+      :url="'/appoint'" 
+      :icon="'add-to-queue'"/>
+    <NavbarItem 
+      :url="'/'" 
+      :icon="'home-alt'"/>
+    <NavbarItem 
+      :url="'/profile'" 
+      :icon="'user'"/>
   </nav>
 
   <RouterView />
@@ -38,7 +40,7 @@ nav {
   bottom: 10px;
   padding-block: 20px;
   background-color: #fff;
-  width: 100%;
+  width: 95%;
   border-radius: 10px;
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
 }

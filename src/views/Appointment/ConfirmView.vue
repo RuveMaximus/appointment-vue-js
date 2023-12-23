@@ -1,8 +1,10 @@
 <script setup>
 import { useRoute } from 'vue-router';
 import Header from '@/components/Header.vue';
+import Block from '@/components/UI/Block.vue';
 import Button from '@/components/UI/Button.vue';
 import { inject } from 'vue';
+import router from '@/router';
 
 
 const consultations = inject('consultations');
@@ -24,6 +26,7 @@ const confirmAppointment = () => {
     alert('Вы подтвердили запись')
     const appointments = JSON.parse(localStorage.getItem('appointments')) ?? [];
     localStorage.setItem('appointments', JSON.stringify([...appointments, consultation]));
+    router.push('/')
 }
 </script>
 
@@ -31,8 +34,9 @@ const confirmAppointment = () => {
 <template>
     <Header> Подтверждение </Header>
 
-    <div class="block">
+    <Block>
         <h2>Вы записываетесь на Консультацию</h2>
+
         <table>
             <tr>
                 <td><box-icon name='calendar' color='#cccccc'></box-icon></td>
@@ -49,7 +53,7 @@ const confirmAppointment = () => {
         </table>
         <Button class="primary" @click="confirmAppointment">Подтвердить</Button>
         <Button><a href="/">Отменить</a></Button>
-    </div>
+    </Block>
 </template>
 
 <style scoped>
