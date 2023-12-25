@@ -5,6 +5,7 @@ import AppointView from '@/views/Appointment/AppointView.vue'
 import ProfileView from '@/views/ProfileView.vue'
 import AppointConfirmView from '@/views/Appointment/ConfirmView.vue'
 import InfoView from '@/views/Appointment/InfoView.vue'
+import ChatView from '@/views/Appointment/ChatView.vue'
 
 
 const router = createRouter({
@@ -14,7 +15,8 @@ const router = createRouter({
     { path: '/profile', component: ProfileView },
     { path: '/appoint', component: AppointView },
     { path: '/appoint/:id', component: AppointConfirmView },
-    { path: '/appoint/info/:id', component: InfoView },
+    { path: '/appoint/:id/info', component: InfoView },
+    { path: '/appoint/:id/chat', component: ChatView },
   ]
 })
 

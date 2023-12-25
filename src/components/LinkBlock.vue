@@ -5,10 +5,10 @@ const props = defineProps(['link', 'title', 'subtitle']);
 </script>
 
 <template>
-    <a :href="props.link">
+    <a :href="props.link" class="card">
         <Block>
             <div class="card-header">
-                <h2>{{ props.title }}</h2>
+                <h2 class="card-header__title">{{ props.title }}</h2>
                 <box-icon name='right-arrow-alt' size="md"></box-icon>
             </div>
             <h4 v-if="props.subtitle">{{ props.subtitle }}</h4>
@@ -33,8 +33,26 @@ h4 {
     margin-bottom: 20px;
     color: #ccc;
 }
-a {
+a.card {
     text-decoration: none;
     color: #212121;
 }
+.card-header__title::after {
+    display: block;
+    content: "";
+    height: 4px;
+    width: 0;
+    background-color: var(--primary-color);
+    transition: width .1s;
+}
+
+.card:hover .card-header > .card-header__title::after {
+    width: 100%;
+}
+
+.card:hover .block {
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
+}
+
+
 </style>

@@ -52,5 +52,6 @@ const cancelAppointment = () => {
 
         <Button class="danger" @click="cancelAppointment">Отменить запись</Button>
         <Button class="primary">Добавить в календарь</Button>
+        <Button class="secondary"><a :href="`/appoint/${cID}/chat/`">Чат со специалистом</a></Button>
     </Block>
 </template>

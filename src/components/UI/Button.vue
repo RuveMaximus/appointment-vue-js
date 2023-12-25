@@ -10,7 +10,7 @@
         border-radius: 10px;
         width: min(140px, 100%);
         font-size: 16px;
-        margin: 0 auto;
+        margin: 2px auto;
     }
     button:hover {
         cursor: pointer;
@@ -24,4 +24,16 @@
         background-color: var(--danger-color);
         color: white;
     }
+
+    button.secondary {
+        background-color: var(--secondary-color);
+        color: #212121;
+    }
+</style>
+
+<style>
+button a {
+    text-decoration: none;
+    color: #212121;
+}
 </style>
