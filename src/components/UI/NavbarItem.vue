@@ -1,6 +1,5 @@
 <script setup>
 import { RouterLink } from 'vue-router';
-import { defineProps } from 'vue';
 import router from '@/router';
 const props = defineProps(['url', 'icon']);
 

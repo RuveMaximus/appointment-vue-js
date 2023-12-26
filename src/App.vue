@@ -41,6 +41,8 @@ nav {
   padding-block: 20px;
   background-color: #fff;
   width: 95%;
+  left: 50%;
+  transform: translateX(-50%);
   border-radius: 10px;
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
 }
